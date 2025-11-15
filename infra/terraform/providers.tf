@@ -9,9 +9,9 @@ terraform {
   }
 
     backend "s3" {
-        bucket = "my-tfstate-bucket"
-        key    = "${var.project_name}/infra.tfstate"
-        region = var.region
+        bucket = "my-tfstate-bucket-0402"
+        key    = "$aws-karpenter/infra.tfstate"
+        region = "us-east-1"
         dynamodb_table = "tfstate-lock"
     }
 }

@@ -32,6 +32,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v5
         with:
           role-to-assume: arn:aws:iam::${{ secrets.TARGET_AWS_ACCOUNT }}:role/${{ secrets.TERRAFORM_ROLE }}
+          aws-region: ${{ env.TF_VAR_region }}
 
       - name: Terraform Destroy
         run: |
